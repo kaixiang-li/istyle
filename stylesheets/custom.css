@@ -1,0 +1,9 @@
+#contract-form {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 6px;
+}
+#contract-form input[type="text"],
+#contract-form input[type="password"] {
+  width: 260px;
+}

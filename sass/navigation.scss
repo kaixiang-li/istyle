@@ -1,0 +1,73 @@
+@import "compass/css3";
+@import "config";
+@import "utils";
+.navbar {
+  overflow: visible;
+  margin-bottom: $base-line-height;
+  //IE7's bad-z-indexing
+  *position: relative;
+  *z-index: 2;
+  .container {
+    width: auto;
+  }
+
+  .brand {
+    float: left;
+    display: block;
+    height: $navbar-height;
+    padding: ($navbar-height - $navbar-branding-font-size) / 2 0;
+    padding-right: $base-font-size;
+    color: $navbar-link-color;
+    font-size: $navbar-branding-font-size;
+    font-weight: bold;
+    line-height: 1;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .nav {
+    @include list-reset();
+    @include list-horizontal();
+    position: relative;
+    left: 0;
+    display: block;
+    float: left;
+    margin: 0 10px 0 0;
+    > li  {
+      float: left; 
+      //links
+      > a {
+        display: block;
+        height: $navbar-height;
+        padding: ($navbar-height - $navbar-link-font-size) / 2 $navbar-link-horizontal-padding;
+        color: $navbar-link-color;
+        font-size: $navbar-link-font-size;
+        line-height: 1;
+
+        &:hover {
+          background-color: darken($navbar-background-color, 10%);
+          text-decoration: none;
+        }
+
+        &:focus {
+          outline: none;
+        } 
+      }
+    }
+  }
+}
+
+.navbar-inner {
+  min-height: $navbar-height;
+  @include background-image(
+    linear-gradient(
+      top, 
+      lighten($navbar-background-color, 3%) 0px, 
+      darken($navbar-background-color, 3%) 100%
+    )
+  );
+  @include box-shadow(0px 1px 2px rgba(0,0,0,0.3));
+}
+
+
